@@ -1,0 +1,579 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vishwas Candles – Handcrafted with Love</title>
+    <meta name="description"
+        content="Vishwas Candles – handmade scented, decorative, seasonal and gift-set candles crafted with love. Light up your moments." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">
+                <span class="logo-flame">🕯</span>
+                <span class="logo-text">Vishwas <em>Candles</em></span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#shop" class="nav-link">Shop</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn" aria-label="Cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 01-8 0" />
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Handcrafted with love</p>
+            <h1 class="hero-title">Light Up Your<br><em>Moments</em></h1>
+            <p class="hero-sub">Pure wax. Natural fragrances. Timeless glow.<br>Every candle tells a story.</p>
+            <div class="hero-cta">
+                <a href="#shop" class="btn btn-primary">Shop Now</a>
+                <a href="#about" class="btn btn-outline">Our Story</a>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== MARQUEE BANNER ===== -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span>✦ Handmade</span><span>✦ Natural Wax</span><span>✦ Pure Fragrance</span>
+            <span>✦ Eco-Friendly</span><span>✦ Gift Ready</span><span>✦ Made with Love</span>
+            <span>✦ Handmade</span><span>✦ Natural Wax</span><span>✦ Pure Fragrance</span>
+            <span>✦ Eco-Friendly</span><span>✦ Gift Ready</span><span>✦ Made with Love</span>
+        </div>
+    </div>
+
+
+    <!-- ===== SHOP ===== -->
+    <section class="shop" id="shop">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">Our Collection</p>
+                <h2 class="section-title">Shop by Category</h2>
+                <p class="section-sub">Every candle is hand-poured in small batches with 100% natural wax and finest
+                    fragrance oils.</p>
+            </div>
+
+            <!-- CATEGORY TABS -->
+            <div class="category-tabs" id="categoryTabs">
+                <button class="tab active" data-cat="all">All</button>
+                <button class="tab" data-cat="scented">Scented</button>
+                <button class="tab" data-cat="decorative">Decorative</button>
+                <button class="tab" data-cat="seasonal">Seasonal</button>
+                <button class="tab" data-cat="giftsets">Gift Sets</button>
+            </div>
+
+            <!-- SEARCH + SORT BAR -->
+            <div class="shop-controls">
+                <div class="search-wrap">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                    <input type="search" id="shopSearch" placeholder="Search candles…" aria-label="Search products"
+                        autocomplete="off" />
+                </div>
+                <select id="sortSelect" aria-label="Sort products">
+                    <option value="default">Sort: Featured</option>
+                    <option value="low">Price: Low → High</option>
+                    <option value="high">Price: High → Low</option>
+                </select>
+            </div>
+
+            <!-- PRODUCT COUNT (dynamic) -->
+            <p class="product-count" id="productCount"></p>
+
+            <!-- PRODUCT GRID -->
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-image-col">
+                <div class="about-img-frame">
+                    <img src="images/decorative_pillar.png" alt="Handcrafted candle by Vishwas Candles"
+                        loading="lazy" />
+                    <div class="about-badge">Est. 2018</div>
+                </div>
+            </div>
+            <div class="about-text-col">
+                <p class="section-eyebrow">Our Story</p>
+                <h2 class="section-title">Crafted from<br><em>the Heart</em></h2>
+                <p class="about-para">Vishwas Candles was born out of a simple idea — that light has the power to
+                    transform any space into a sanctuary. We hand-pour every candle using 100% natural soy and beeswax,
+                    blended with premium fragrance oils and dried botanicals.</p>
+                <p class="about-para">From our small workshop in India, each batch is made in limited quantities to
+                    ensure every candle you receive carries the warmth and intention it was made with.</p>
+                <div class="about-stats">
+                    <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Unique Scents</span>
+                    </div>
+                    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Natural Wax</span>
+                    </div>
+                </div>
+                <a href="#shop" class="btn btn-primary">Explore Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES STRIP ===== -->
+    <section class="features">
+        <div class="container features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🌿</div>
+                <h3>Natural Ingredients</h3>
+                <p>100% soy &amp; beeswax with pure fragrance oils</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🤲</div>
+                <h3>Handcrafted</h3>
+                <p>Every candle hand-poured in our Indian workshop</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎁</div>
+                <h3>Gift Ready</h3>
+                <p>Beautiful packaging perfect for any occasion</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🚚</div>
+                <h3>Free Delivery</h3>
+                <p>Complimentary shipping on orders above ₹799</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CUSTOMER REVIEWS ===== -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">Testimonials</p>
+                <h2 class="section-title">What Our Customers <em>Say</em></h2>
+                <p class="section-sub">Real stories from people who've brought our candles into their homes and hearts.
+                </p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The Lavender Dreams candle smells absolutely divine — it fills my entire
+                        room
+                        with a calming aroma. Burns for hours without fading. Truly the best candle I've ever bought!"
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">P</div>
+                        <div class="review-meta">
+                            <span class="review-name">Priya Sharma</span>
+                            <span class="review-date">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Ordered the Luxury Hamper as a Diwali gift for my sister. The packaging was
+                        so
+                        beautiful that she thought it came from a high-end boutique. Will definitely order again!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">R</div>
+                        <div class="review-meta">
+                            <span class="review-name">Rahul Verma</span>
+                            <span class="review-date">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"I'm obsessed with the Sandalwood Ritual candle! The earthy fragrance is so
+                        authentic and the burn time is incredible — lasted well over 50 hours. Pure quality."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">A</div>
+                        <div class="review-meta">
+                            <span class="review-name">Ananya Iyer</span>
+                            <span class="review-date">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Beautiful handcrafted candles with the most soothing fragrances. The Winter
+                        Spice one makes my home feel like a warm hug during cold evenings. Highly recommended!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">V</div>
+                        <div class="review-meta">
+                            <span class="review-name">Vikram Patel</span>
+                            <span class="review-date">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Got the Rose Garden set for my anniversary and my wife absolutely loved it.
+                        The fragrance is subtle yet long-lasting, and the eco-friendly packaging is a lovely touch."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">M</div>
+                        <div class="review-meta">
+                            <span class="review-name">Meera Krishnan</span>
+                            <span class="review-date">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <p class="section-eyebrow">Get in Touch</p>
+                <h2 class="section-title">We'd Love to<br><em>Hear from You</em></h2>
+                <p class="contact-para">Questions, custom orders, or wholesale enquiries — we're here. Drop us a
+                    message and we'll get back within 24 hours.</p>
+
+                <ul class="contact-list">
+                    <li>
+                        <div class="contact-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.7">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="contact-detail">
+                            <strong>Studio Address</strong>
+                            <span>Raj Nagar, Panipat<br>Haryana, India – 132103</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.7">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div class="contact-detail">
+                            <strong>Email Us</strong>
+                            <a href="mailto:contact.vishwascandles@gmail.com">contact.vishwascandles@gmail.com</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.7">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                        </div>
+                        <div class="contact-detail">
+                            <strong>Call Us</strong>
+                            <a href="tel:+919733135250">+91 97331 35250</a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Your email address" required />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number" />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us how we can help…"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Send Message
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                </button>
+                <p class="form-success" id="formSuccess">✓ Message sent! We'll be in touch soon.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOLLOW OUR JOURNEY ===== -->
+    <section class="follow-journey">
+        <div class="container follow-journey-inner">
+            <p class="section-eyebrow">Stay Connected</p>
+            <h2 class="section-title">Follow Our <em>Journey</em></h2>
+            <p class="follow-journey-para">Stay updated with our latest creations, behind-the-scenes moments, and
+                exclusive offers on Instagram.</p>
+            <a href="https://www.instagram.com/vishwascandles?igsh=d2N0bmoydzhzOTcx" target="_blank"
+                rel="noopener noreferrer" class="follow-journey-link" aria-label="Follow us on Instagram">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+                <span>@vishwascandles</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="logo-flame">🕯</span>
+                <span class="logo-text">Vishwas <em>Candles</em></span>
+                <p class="footer-tagline">Hand-poured with love.<br>Lighting up moments, one candle at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h4>Categories</h4>
+                <a href="#shop" data-filter="scented">Scented Candles</a>
+                <a href="#shop" data-filter="decorative">Decorative</a>
+                <a href="#shop" data-filter="seasonal">Seasonal</a>
+                <a href="#shop" data-filter="giftsets">Gift Sets</a>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-row">
+                    <a href="#" class="social-btn" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="WhatsApp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="footer-note">Free shipping above ₹799<br>Returns within 7 days</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Vishwas Candles. All rights reserved. Made with ♥ in India.</p>
+        </div>
+    </footer>
+
+    <!-- ===== PRODUCT DETAIL MODAL ===== -->
+    <div class="pd-overlay" id="pdOverlay"></div>
+    <div class="pd-modal" id="pdModal">
+        <button class="pd-close" id="pdClose" aria-label="Close product detail">✕</button>
+        <div class="pd-content">
+            <div class="pd-image-col">
+                <div class="pd-img-wrap">
+                    <img src="" alt="" id="pdImage" />
+                    <span class="product-badge" id="pdBadge"></span>
+                </div>
+            </div>
+            <div class="pd-info-col">
+                <p class="product-category" id="pdCategory"></p>
+                <h2 class="pd-name" id="pdName"></h2>
+                <p class="pd-desc" id="pdDesc"></p>
+                <div class="pd-price" id="pdPrice"></div>
+                <div class="pd-stars">★★★★★ <span class="pd-rating-text">5.0 · Customer Favourite</span></div>
+                <button class="btn btn-primary pd-add-btn" id="pdAddCart">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 01-8 0" />
+                    </svg>
+                    Add to Cart
+                </button>
+
+                <!-- Product-Level Reviews -->
+                <div class="pd-reviews">
+                    <h3 class="pd-reviews-title">Customer Reviews</h3>
+                    <div class="pd-reviews-list" id="pdReviews">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CART DRAWER ===== -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+        <div class="cart-header">
+            <h3>Your Cart <span id="cartItemCount"></span></h3>
+            <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty" id="cartEmpty">
+                <span>🕯</span>
+                <p>Your cart is empty</p>
+                <a href="#shop" class="btn btn-primary" id="shopNowBtn">Shop Now</a>
+            </div>
+            <ul class="cart-items" id="cartItems"></ul>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="btn btn-primary full-width" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </aside>
+
+    <!-- ===== CHECKOUT MODAL ===== -->
+    <div class="checkout-overlay" id="checkoutOverlay"></div>
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <button class="cart-close" id="checkoutClose" aria-label="Close checkout">✕</button>
+        </div>
+        <div class="checkout-body">
+            <!-- Order Summary -->
+            <div class="checkout-summary" id="checkoutSummary"></div>
+
+            <!-- Shipping Form -->
+            <form class="checkout-form" id="checkoutForm" novalidate>
+                <h3 class="checkout-section-title">Shipping Details</h3>
+                <div class="form-group">
+                    <label for="chkName">Full Name *</label>
+                    <input type="text" id="chkName" required />
+                </div>
+                <div class="form-group">
+                    <label for="chkPhone">Phone Number *</label>
+                    <input type="tel" id="chkPhone" required />
+                </div>
+                <div class="form-group">
+                    <label for="chkEmail">Email *</label>
+                    <input type="email" id="chkEmail" required />
+                </div>
+                <div class="form-group">
+                    <label for="chkAddress">House No / Street Address *</label>
+                    <input type="text" id="chkAddress" required />
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="chkState">State *</label>
+                        <select id="chkState" required>
+                            <option value="" disabled selected>Select State</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="chkCity">City *</label>
+                        <select id="chkCity" required>
+                            <option value="" disabled selected>Select City</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="chkPincode">Pincode *</label>
+                    <input type="text" id="chkPincode" maxlength="6" inputmode="numeric" pattern="[0-9]{6}" required />
+                </div>
+
+                <h3 class="checkout-section-title">Payment Method</h3>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cod" checked />
+                        <span class="payment-label">
+                            <span class="payment-name">Cash on Delivery</span>
+                            <span class="payment-desc">Pay when your order arrives</span>
+                        </span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="upi" />
+                        <span class="payment-label">
+                            <span class="payment-name">UPI / Online</span>
+                            <span class="payment-desc">Google Pay, PhonePe, Paytm</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="checkout-total-bar" id="checkoutTotalBar">
+                    <div class="checkout-price-row"><span>Subtotal</span><span id="chkSubtotal">₹0</span></div>
+                    <div class="checkout-price-row"><span>Shipping</span><span id="chkShipping">Free</span></div>
+                    <div class="checkout-price-row total"><span>Total</span><span id="chkTotal">₹0</span></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width" id="placeOrderBtn">
+                    🕯 Place Order
+                </button>
+            </form>
+        </div>
+
+        <!-- Success Screen -->
+        <div class="checkout-success" id="checkoutSuccess" style="display:none">
+            <div class="success-content">
+                <div class="success-icon">✓</div>
+                <h2>Order Placed!</h2>
+                <p>Thank you for shopping with <strong>Vishwas Candles</strong>.</p>
+                <p class="success-detail">Your order confirmation has been sent to your email. We'll dispatch your
+                    candles within 2–3 business days.</p>
+                <p class="success-order-id" id="successOrderId"></p>
+                <button class="btn btn-primary" id="continueShopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
